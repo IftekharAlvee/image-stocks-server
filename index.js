@@ -10,7 +10,7 @@ require('dotenv').config();
 app.use(cors());
 app.use(express.json());
 
-const uri = `mongodb+srv://ImageStockAdmin:QbMtBh2b2ZBfL2k@cluster0.s69t4.mongodb.net/imageStock?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://ImageStockAdmin:test1234@cluster0.s69t4.mongodb.net/imageStock?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
