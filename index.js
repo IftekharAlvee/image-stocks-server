@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5055;
 const MongoClient = require('mongodb').MongoClient;
-const ObjectID = require('mongodb').ObjectID
+const ObjectID = require('mongodb').ObjectID;
 const cors = require('cors');
 require('dotenv').config();
 
@@ -10,11 +10,12 @@ require('dotenv').config();
 app.use(cors());
 app.use(express.json());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.s69t4.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://ImageStockAdmin:QbMtBh2b2ZBfL2k@cluster0.s69t4.mongodb.net/imageStock?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 client.connect(error => {
+  console.log(error);
   const imageCollection = client.db("imageStock").collection("images");
   const ordersCollection = client.db("imageStock").collection("orders");
 
