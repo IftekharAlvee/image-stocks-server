@@ -22,7 +22,7 @@ client.connect(err => {
     imageCollection.find()
     .toArray((err, items) => {
       res.send(items);
-      // console.log(items);
+      console.log(items);
     })
     
   });
