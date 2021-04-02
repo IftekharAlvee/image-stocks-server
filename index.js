@@ -1,10 +1,10 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const port = process.env.PORT || 5055;
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID
-const cors = require('cors')
-require('dotenv').config()
+const cors = require('cors');
+require('dotenv').config();
 
 
 app.use(cors());
@@ -35,7 +35,7 @@ client.connect(error => {
       console.log(documents.deletedCount);
       res.send(documents)
     })
-  })
+  });
   
   app.post('/addImage',(req,res) => {
     const newImage = req.body;
@@ -45,7 +45,7 @@ client.connect(error => {
       console.log("kam sarse: " , result.insertedCount);
       res.send(result.insertedCount > 0)
     })
-  })
+  });
 
   app.post('/addOrder',(req,res) => {
     const newOrder = req.body;
