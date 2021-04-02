@@ -67,12 +67,14 @@ client.connect(err => {
     
   });
 
+  app.get('/', (req, res) => {
+    res.send('Heroku deployrd')
+  })
+
   console.log("Database connected");
 });
 
 
-app.get('/', (req, res) => {
-  res.send('Heroku deployrd')
-})
+
 
 app.listen(port);
